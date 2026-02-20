@@ -4,9 +4,7 @@ The project is fully containerized using Docker.
 🚀 Features
 
 Upload CSV file containing users
-
 Validate CSV records before inserting
-
 Skip invalid or duplicate records
 
 Store valid users in MySQL database
@@ -81,3 +79,7 @@ POST /api/upload-csv
 Request (Form Data)
 Key	Type
 csv_file	File
+
+
+#second question anaswr
+SELECT customers.customer_id, customers.name, customers.email, SUM(orders.amount) AS total_amount FROM customers INNER JOIN orders ON customers.customer_id = orders.customer_id WHERE YEAR(orders.order_date) = YEAR(CURRENT_DATE) - 1 GROUP BY customers.customer_id, customers.name, customers.email ORDER BY total_amount;
